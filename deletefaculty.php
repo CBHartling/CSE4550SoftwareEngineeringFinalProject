@@ -5,7 +5,7 @@ $servername = "localhost";
 $username = "quickme1_4211";
 $password = "csci4211";
 $dbname = "quickme1_4211";
-
+// Test update
 $facultyID = $_REQUEST['facultyID'];
 
 
