@@ -2,14 +2,14 @@
 <body>
 
 
-Results of Faculty Database<br><br>
+Results of Savings Database<br><br>
 
 <?php
 
 $servername = "localhost";
 $username = "quickme1_4211";
 $password = "csci4211";
-$dbname = "quickme1_4211";
+$dbname = "dbvpny1qngaxgp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,13 +20,13 @@ if ($conn->connect_error) {
  
   
   
-  $sql = "SELECT *  FROM faculty";
+  $sql = "SELECT *  FROM savings";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["facultyID"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. " email: " . $row["email"]. " Phone: " . $row["phone"]. " Office: " . $row["Office_no"]. " Speciality: " . $row["speciality"]. "<br>";
+    echo "Account Number: " . $row["Acct_no"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. " Address: " . $row["address"]." Email: " . $row["email"]."<br>Phone: " . $row["phone"]." Balance: " . $row["Balance"]." Date: " . $row["Date"]." TRansID: " . $row["TRansID"]." Interest Rate: " . $row["interest_rate"]." Total Amount: " . $row["total_amount"]."<br>";
   }
 } else {
   echo "0 results";
