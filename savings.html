@@ -8,7 +8,6 @@
 
 <body>
 <p>Update Faculty Office Number</p>
-<p>&nbsp;</p>
 
 <form name="updateSavings" method = "post" action="updateSavings.php">
 
@@ -26,7 +25,6 @@
 
 <form name="searchSavings" method="post" action="searchSavings.php">
     <p>Search Student Form</p>
-    <p>&nbsp;</p>
 
     <p>
         Account Number:
@@ -38,7 +36,9 @@
 </form>
 
 <form name="Register Account" method="post" action="insertSavings.php">
-
+    <p>
+        Register Account
+    </p>
     <div class="container">
         <label><b>Account Number</b></label>
         <input type="text" placeholder="Enter Account Number" name="Acct_no" required="">
@@ -49,8 +49,8 @@
         <label><b>Last Name</b></label>
         <input type="text" placeholder="Enter Last Name" name="lastname" required="">
 
-        <label><b>Office Number</b></label>
-        <input type="text" placeholder="Enter Office Number" name="Office_no" required="">
+        <label><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" name="address" required="">
 
         <label><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required="">
@@ -58,9 +58,20 @@
         <label><b>Phone</b></label>
         <input type="text" placeholder="Enter Phone" name="phone" required="">
 
-        <label><b>FacultyID</b></label>
-        <input type="text" placeholder="Enter FacultyID" name="facultyID" required="">
+        <label><b>Balance</b></label>
+        <input type="text" placeholder="Enter Balance" name="Balance" required="">
 
+        <label><b>Date</b></label>
+        <input type="text" placeholder="Enter Date" name="Date" required="">
+
+        <label><b>TRansID</b></label>
+        <input type="text" placeholder="Enter TRansID" name="TRansID" required="">
+
+        <label><b>Interest Rate</b></label>
+        <input type="text" placeholder="Enter Interst Rate" name="interest_rate" required="">
+
+        <label><b>Total Amount</b></label>
+        <input type="text" placeholder="Enter Total Amount" name="total_amount" required="">
 
         <button type="submit">submit</button>
 
@@ -72,13 +83,15 @@
     </div>
 </form>
 
-<form name="deletefaculty" method="post" action="deletefaculty.php">
-
+<form name="deleteSavings" method="post" action="deleteSavings.php">
     <p>
-        FacultyID
-        <input type="text" name="facultyID">
+        Delete Account:
     </p>
-
+    <p>
+        Acct_no
+        <input type="text" name="Acct_no">
+    </p>
+    <p>
     <input type="submit" name="Submit" value="Submit">
     </p>
 
