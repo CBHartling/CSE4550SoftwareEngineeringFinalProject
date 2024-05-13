@@ -15,7 +15,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
+//Values for account number and the requested deposit amount
 $Acct_no = intval($_REQUEST['Acct_no']);
 $DepAmt = floatval(???? Idk what to put here it just needs an input);
+
+
 //when a deposit happens you need to do both the transactions table and the savings table
-$sql = "INSERT INTO savings
+$sql = "UPDATE savings SET Balance = Balance + '$DepAmt' WHERE Acct_no='$Acct_no'";
+$sql = "INSERT INTO savings_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
+VALUES('Wherever we get transid from', "Deposit", date, '$DepAmt', Lastname, firstname, phone)";
