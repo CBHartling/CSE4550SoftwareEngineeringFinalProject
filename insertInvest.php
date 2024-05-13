@@ -24,17 +24,17 @@ if ($conn->connect_error) {
 
    // get the variables from the URL request string
 
-   $Acct_no = $_REQUEST['Acct_no'];
+   $Acct_no = intval($_REQUEST['Acct_no']);
    $firstname = $_REQUEST['firstname'];
    $lastname = $_REQUEST['lastname'];
    $address = $_REQUEST['address'];
    $email = $_REQUEST['email'];
    $phone = $_REQUEST['phone'];
-   $Balance = $_REQUEST['Balance'];
+   $Balance = floatval($_REQUEST['Balance']);
    $Date = $_REQUEST['Date'];
-   $TRansID = $_REQUEST['TRansID'];
-   $interst_rate = $_REQUEST['interest_rate'];
-   $total_amount = $_REQUEST['total_amount'];
+   $TRansID = intval($_REQUEST['TRansID']);
+   $interst_rate = floatval($_REQUEST['interest_rate']);
+   $total_amount = floatval($_REQUEST['total_amount']);
 
 
    $sql = "INSERT INTO Investment (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID, interst_rate, total_amount)
