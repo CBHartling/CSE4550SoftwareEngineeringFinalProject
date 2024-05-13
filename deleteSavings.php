@@ -6,7 +6,7 @@ $username = "quickme1_4211";
 $password = "csci4211";
 $dbname = "dbvpny1qngaxgp";
 
-$Acct_no = $_REQUEST['Acct_no'];
+$Acct_no = intval($_REQUEST['Acct_no']);
 
 
 // Create connection
