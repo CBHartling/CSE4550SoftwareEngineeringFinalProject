@@ -17,8 +17,8 @@ if ($conn->connect_error) {
 } 
  
     
-$Acct_no = $_REQUEST['Acct_no'];
-$Balance = $_REQUEST['Balance'];
+$Acct_no = intval($_REQUEST['Acct_no']);
+$Balance = floatval($_REQUEST['Balance']);
 
 
 $sql = "UPDATE savings SET Balance='$Balance' WHERE Acct_no='$Acct_no'";
