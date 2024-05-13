@@ -15,3 +15,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
+//when a deposit happens you need to do both the transactions table and the savings table
+$sql
