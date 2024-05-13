@@ -19,7 +19,7 @@ $Acct_no = $_REQUEST['Acct_no'];
 
    
 
-$sql = "SELECT * FROM `savings` WHERE `Acct_no` LIKE '%$Acct_no'";
+$sql = "SELECT * FROM `Investment` WHERE `Acct_no` LIKE '%$Acct_no'";
 $result = $conn->query($sql);
 
 
