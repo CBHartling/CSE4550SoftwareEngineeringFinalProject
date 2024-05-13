@@ -17,8 +17,8 @@ if ($conn->connect_error) {
 } 
  
     
-$Acct_no = $_REQUEST['Acct_no'];
-$Balance = $_REQUEST['Balance'];
+$Acct_no = intval($_REQUEST['Acct_no']);
+$Balance = intval($_REQUEST['Balance']);
 
 
 $sql = "UPDATE checking SET Balance='$Balance' WHERE Acct_no='$Acct_no'";
