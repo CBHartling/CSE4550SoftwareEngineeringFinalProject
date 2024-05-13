@@ -33,12 +33,11 @@ if ($conn->connect_error) {
    $Balance = $_REQUEST['Balance'];
    $Date = $_REQUEST['Date'];
    $TRansID = $_REQUEST['TRansID'];
-   $interst_rate = $_REQUEST['interest_rate'];
-   $total_amount = $_REQUEST['total_amount'];
 
 
-   $sql = "INSERT INTO faculty (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID, interst_rate, total_amount)
-VALUES ('$Acct_no', '$firstname', '$lastname', '$address', '$email', '$phone', '$Balance', '$Date', '$TRansID', '$interst_rate', '$total_amount')";
+
+   $sql = "INSERT INTO checking (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID)
+VALUES ('$Acct_no', '$firstname', '$lastname', '$address', '$email', '$phone', '$Balance', '$Date', '$TRansID')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
