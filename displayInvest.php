@@ -20,7 +20,7 @@ if ($conn->connect_error) {
  
   
   
-  $sql = "SELECT *  FROM savings";
+  $sql = "SELECT *  FROM Investment";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
