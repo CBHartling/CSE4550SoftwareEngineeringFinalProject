@@ -18,7 +18,7 @@ if ($conn->connect_error) {
    
  
 
- $sql = "DELETE FROM savings WHERE Acct_no=$Acct_no";
+ $sql = "DELETE FROM checking WHERE Acct_no=$Acct_no";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";
