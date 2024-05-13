@@ -15,7 +15,7 @@ if ($conn->connect_error) {
  
   
  
-$Acct_no = $_REQUEST['Acct_no'];
+$Acct_no = intval($_REQUEST['Acct_no']);
 
    
 
