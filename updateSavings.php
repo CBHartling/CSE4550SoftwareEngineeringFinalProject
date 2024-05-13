@@ -21,7 +21,7 @@ $Acct_no = $_REQUEST['Acct_no'];
 $Balance = $_REQUEST['Balance'];
 
 
-$sql = "UPDATE faculty SET Balance='$Balance' WHERE Acct_no='$Acct_no'";
+$sql = "UPDATE savings SET Balance='$Balance' WHERE Acct_no='$Acct_no'";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record updated successfully";
