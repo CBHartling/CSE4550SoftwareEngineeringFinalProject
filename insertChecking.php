@@ -24,15 +24,15 @@ if ($conn->connect_error) {
 
    // get the variables from the URL request string
 
-   $Acct_no = $_REQUEST['Acct_no'];
+   $Acct_no = intval($_REQUEST['Acct_no']);
    $firstname = $_REQUEST['firstname'];
    $lastname = $_REQUEST['lastname'];
    $address = $_REQUEST['address'];
    $email = $_REQUEST['email'];
    $phone = $_REQUEST['phone'];
-   $Balance = $_REQUEST['Balance'];
+   $Balance = floatval($_REQUEST['Balance']);
    $Date = $_REQUEST['Date'];
-   $TRansID = $_REQUEST['TRansID'];
+   $TRansID = intval($_REQUEST['TRansID']);
 
 
 
