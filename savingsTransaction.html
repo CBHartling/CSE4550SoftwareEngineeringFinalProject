@@ -29,6 +29,51 @@
         </div>
     </form>
 
+    <form name="Make Withdrawal" method="post" action="savingsWithdrawal.php">
+        <p>
+            Withdrawal
+        </p>
+        <div class="container">
+            <label><b>Account Number</b></label>
+            <input type="text" placeholder="Enter Account Number" name="Acct_no" required="">
+
+            <label><b>Withdrawal Amount</b></label>
+            <input type="text" placeholder="Enter Amount" name="WithAmt" required="">
+
+            <button type="submit">submit</button>
+
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+            <br>
+
+        </div>
+    </form>
+
+    <form name="Make Transfer" method="post" action="savingsTransfer.php">
+        <p>
+            Transfer
+        </p>
+        <div class="container">
+            <label><b>To Account Number</b></label>
+            <input type="text" placeholder="Enter Account Number" name="Acct_noTar" required="">
+
+            <label><b>From Account Number</b></label>
+            <input type="text" placeholder="Enter Account Number" name="Acct_noFrom" required="">
+
+            <label><b>Transfer Amount</b></label>
+            <input type="text" placeholder="Enter Amount" name="TransAmt" required="">
+
+            <button type="submit">submit</button>
+
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+
+            <br>
+
+        </div>
+    </form>
+
 
 
 </body>
