@@ -1,4 +1,4 @@
-<p>Update Savings Office Number</p>
+<p>Update Checkings Office Number</p>
 
 <?php
 
