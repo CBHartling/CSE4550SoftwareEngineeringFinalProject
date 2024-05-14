@@ -21,14 +21,18 @@ $pssword = $_REQUEST['pssword'];
 
 
 //Check if login is valid and then send into access page
-$sql = ""
-
-
+$sql = "SELECT * FROM login_tbl WHERE $userid = 'userid' AND $pssword = 'pssword'"
+$result = $conn->query($sql)
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Succesful login";
+  // Send to access page
+
+}
+else {
+  echo "Failed Login";
+  // Send back to index_html
+
 }
 
 $conn->close();
