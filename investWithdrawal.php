@@ -32,14 +32,18 @@ $sql = "INSERT INTO investment_transactions (transid, trans_type, trans_date, tr
 SELECT s.TRansID, 'Withdrawal', CURRENT_DATE(), $WithAmt, s.lastname, s.firstname, s.phone
 FROM Investment s
 WHERE s.Acct_no = $Acct_no";
-}
-
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
+}
+
+else{
+	echo "You must wait one year to withdraw.";
+}
+
 
 $conn->close();
 ?>
