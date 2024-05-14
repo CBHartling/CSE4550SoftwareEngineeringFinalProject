@@ -21,10 +21,11 @@ $Acct_no = intval($_REQUEST['Acct_no']);
 
 //when a deposit happens you need to do both the transactions table and the savings table
 $sql = "UPDATE savings SET Balance = Balance + (Balance * interest_rate) WHERE Acct_no='$Acct_no'";
+$conn->query($sql);
 $sql = "INSERT INTO savings_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
 SELECT s.TRansID, 'Interest', CURRENT_DATE(), s.Balance, s.lastname, s.firstname, s.phone
 FROM savings s
-WHERE s.Acct_no = $Acct_no;"
+WHERE s.Acct_no = $Acct_no";
 
 
 

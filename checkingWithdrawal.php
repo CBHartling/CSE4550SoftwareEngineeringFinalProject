@@ -22,10 +22,11 @@ $WithAmt = floatval($_REQUEST['WithAmt']);
 
 //when a deposit happens you need to do both the transactions table and the checking table
 $sql = "UPDATE checking SET Balance = Balance - '$WithAmt' WHERE Acct_no='$Acct_no'";
+$conn->query($sql);
 $sql = "INSERT INTO checking_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
 SELECT s.TRansID, 'Withdrawal', CURRENT_DATE(), $WithAmt, s.lastname, s.firstname, s.phone
 FROM checking s
-WHERE s.Acct_no = $Acct_no;"
+WHERE s.Acct_no = $Acct_no";
 
 
 
