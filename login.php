@@ -32,7 +32,7 @@ if (is_null($result)) {
 else {
   echo "Succesful login";
   // Send to home
-  include 'hame.html'
+  include 'home.html'
 }
 
 $conn->close();
