@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 } 
 //Values for account number and the requested deposit amount
 $Acct_no = intval($_REQUEST['Acct_no']);
-$DepAmt = floatval($_REQUEST['DepAmt');
+$DepAmt = floatval($_REQUEST['DepAmt']);
 
 
 //when a deposit happens you need to do both the transactions table and the checking table
