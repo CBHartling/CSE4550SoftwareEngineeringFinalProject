@@ -21,7 +21,7 @@ $pssword = $_REQUEST['pssword'];
 
 
 //Check if login is valid and then send into access page
-
+$sql = ""
 
 
 
