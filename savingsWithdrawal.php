@@ -17,13 +17,13 @@ if ($conn->connect_error) {
 } 
 //Values for account number and the requested deposit amount
 $Acct_no = intval($_REQUEST['Acct_no']);
-$DepAmt = floatval($_REQUEST['DepAmt');
+$WithAmt = floatval($_REQUEST['WithAmt');
 
 
 //when a deposit happens you need to do both the transactions table and the savings table
-$sql = "UPDATE savings SET Balance = Balance + '$DepAmt' WHERE Acct_no='$Acct_no'";
+$sql = "UPDATE savings SET Balance = Balance - '$WithAmt' WHERE Acct_no='$Acct_no'";
 $sql = "INSERT INTO savings_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
-SELECT s.TRansID, 'Deposit', CURRENT_DATE(), $DepAmt, s.lastname, s.firstname, s.phone
+SELECT s.TRansID, 'Withdrawal', CURRENT_DATE(), $WithAmt, s.lastname, s.firstname, s.phone
 FROM savings s
 WHERE s.Acct_no = $Acct_no;"
 
