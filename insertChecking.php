@@ -31,13 +31,12 @@ if ($conn->connect_error) {
    $email = $_REQUEST['email'];
    $phone = $_REQUEST['phone'];
    $Balance = floatval($_REQUEST['Balance']);
-   $Date = strtotime ( $_REQUEST['Date']);
    $TRansID = intval($_REQUEST['TRansID']);
 
 
 
    $sql = "INSERT INTO checking (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID)
-VALUES ('$Acct_no', '$firstname', '$lastname', '$address', '$email', '$phone', '$Balance', '$Date', '$TRansID')";
+VALUES ('$Acct_no', '$firstname', '$lastname', '$address', '$email', '$phone', '$Balance', CURRENT_DATE(), '$TRansID')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
