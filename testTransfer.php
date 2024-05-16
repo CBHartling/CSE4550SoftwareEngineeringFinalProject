@@ -30,9 +30,9 @@ try {
     $sql = "UPDATE checking SET Balance = Balance + $TransAmt WHERE Acct_no = $Acct_noTar";
     $conn->query($sql);
     $sql = "INSERT INTO checking_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
-SELECT s.TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, s.lastname, s.firstname, s.phone
-FROM checking s
-WHERE s.Acct_no = $Acct_noFrom";
+SELECT TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, lastname, firstname, phone
+FROM checking 
+WHERE Acct_no = $Acct_noFrom";
     // Commit the transaction
     $conn->commit();
 
