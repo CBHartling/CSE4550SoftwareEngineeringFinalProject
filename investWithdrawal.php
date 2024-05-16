@@ -20,7 +20,9 @@ $Acct_no = intval($_REQUEST['Acct_no']);
 $WithAmt = floatval($_REQUEST['WithAmt']);
 $sql = "SELECT Date FROM Investment WHERE Acct_no = '$Acct_no'";
 $result = $conn->query($sql);
-$OGDate = new DateTime($result);
+$bridge = $result->fetch_assoc();
+$dbDate = $bridge['Date'];
+$OGDate = new DateTime($dbDate);
 $current = new DateTime();
 $interval = $current->diff($OGDate);
 
