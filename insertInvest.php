@@ -31,7 +31,7 @@ if ($conn->connect_error) {
    $email = $_REQUEST['email'];
    $phone = $_REQUEST['phone'];
    $Balance = floatval($_REQUEST['Balance']);
-   $Date = $_REQUEST['Date'];
+   $Date = strtotime ( $_REQUEST['Date']);
    $TRansID = intval($_REQUEST['TRansID']);
    $interst_rate = floatval($_REQUEST['interest_rate']);
    $total_amount = floatval($_REQUEST['total_amount']);
