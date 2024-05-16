@@ -29,6 +29,7 @@ if ($result == $pssword) {
   // Send to home
   include 'home.html';
 }
+if
 else if (is_null($result)) {
   echo "Failed Login";
   // Send to index
