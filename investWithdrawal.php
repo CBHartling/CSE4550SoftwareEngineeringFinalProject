@@ -20,6 +20,10 @@ $Acct_no = intval($_REQUEST['Acct_no']);
 $WithAmt = floatval($_REQUEST['WithAmt']);
 $sql = "SELECT Date FROM Investment WHERE Acct_no = '$Acct_no'";
 $result = $conn->query($sql);
+if (!$result) {
+    // Query execution failed, handle the error
+    die("Query failed: " . $conn->error);
+}
 $bridge = $result->fetch_assoc();
 $dbDate = $bridge['Date'];
 $OGDate = new DateTime($dbDate);
