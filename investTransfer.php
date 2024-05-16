@@ -29,7 +29,7 @@ try {
     // Add the transaction amount to the target account
     $sql = "UPDATE Investment SET Balance = Balance + $TransAmt WHERE Acct_no = $Acct_noTar";
     $conn->query($sql);
-    $sql = "INSERT INTO Investment_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
+    $sql = "INSERT INTO investment_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
 SELECT TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, lastname, firstname, phone
 FROM Investment 
 WHERE Acct_no = $Acct_noFrom";
