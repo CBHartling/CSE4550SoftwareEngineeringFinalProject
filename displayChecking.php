@@ -2,7 +2,7 @@
 <body>
 
 
-Results of Savings Database<br><br>
+Results of Checking Database<br><br>
 
 <?php
 
