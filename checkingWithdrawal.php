@@ -1,4 +1,4 @@
-<p>Checking Deposit</p>
+<p>Checking Withdrawal</p>
 
 <?php
 
