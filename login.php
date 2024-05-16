@@ -29,11 +29,15 @@ if (is_null($result)) {
   // Send to index
   include 'index.html';
 }
-else {
+else if ($result -> num_rows > 0) {
   echo "Succesful login";
   // Send to home
   include 'home.html';
 }
+else
+{echo "Failed Login";
+  // Send to index
+  include 'index.html';}
 
 $conn->close();
 ?>
