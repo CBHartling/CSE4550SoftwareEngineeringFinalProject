@@ -1,4 +1,4 @@
-<p>Investment Deposit</p>
+<p>Investment Transfer</p>
 
 <?php
 
