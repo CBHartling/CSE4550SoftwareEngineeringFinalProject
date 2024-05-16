@@ -21,7 +21,7 @@ $pssword = $_REQUEST['pssword'];
 
 
 //Check if login is valid and then send into access page
-$sql = "SELECT pssword FROM login_tbl WHERE userid = '$userid';
+$sql = "SELECT pssword FROM login_tbl WHERE userid = '$userid'";
 $result = $conn->query($sql);
 
 if ($result == $pssword) {
