@@ -21,10 +21,10 @@ $pssword = $_REQUEST['pssword'];
 
 
 //Check if login is valid and then send into access page
-$sql = "SELECT pssword FROM login_tbl WHERE $userid = 'userid' AND $pssword = 'pssword'";
+$sql = "SELECT pssword FROM login_tbl WHERE $userid = 'userid';
 $result = $conn->query($sql);
 
-if ($result -> num_rows > 0) {
+if ($result == $pssword) {
   echo "Succesful login";
   // Send to home
   include 'home.html';
