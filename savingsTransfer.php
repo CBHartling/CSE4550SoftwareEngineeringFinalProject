@@ -1,4 +1,4 @@
-<p>Savings Deposit</p>
+<p>Savings Transfer</p>
 
 <?php
 
