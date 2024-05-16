@@ -1,4 +1,4 @@
-<p>Savings Deposit</p>
+<p>Savings Interest</p>
 
 <?php
 
