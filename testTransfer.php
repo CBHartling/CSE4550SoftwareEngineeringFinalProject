@@ -27,12 +27,6 @@ try {
     $sql = "UPDATE checking SET Balance = Balance + $TransAmt WHERE Acct_no = $Acct_noTar";
     $conn->query($sql);
 
-    // Insert the transaction record
-    $sql = "INSERT INTO checking_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
-SELECT s.TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, s.lastname, s.firstname, s.phone
-FROM checking s
-WHERE s.Acct_no = $Acct_noFrom";
-
     // Commit the transaction
     $conn->commit();
 
@@ -42,6 +36,11 @@ WHERE s.Acct_no = $Acct_noFrom";
     $conn->rollback();
     echo "Transaction failed: " . $e->getMessage();
 }
+$sql = "INSERT INTO checking_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
+SELECT s.TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, s.lastname, s.firstname, s.phone
+FROM checking s
+WHERE s.Acct_no = $Acct_noFrom";
+$conn->query($sql);
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
