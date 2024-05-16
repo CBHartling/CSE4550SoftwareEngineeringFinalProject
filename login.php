@@ -24,15 +24,15 @@ $pssword = $_REQUEST['pssword'];
 $sql = "SELECT * FROM login_tbl WHERE $userid = 'userid' AND $pssword = 'pssword'";
 $result = $conn->query($sql);
 
-if (is_null($result)) {
-  echo "Failed Login";
-  // Send to index
-  include 'index.html';
-}
-else if ($result -> num_rows > 0) {
+if ($result -> num_rows > 0) {
   echo "Succesful login";
   // Send to home
   include 'home.html';
+}
+else if (is_null($result)) {
+  echo "Failed Login";
+  // Send to index
+  include 'index.html';
 }
 else
 {echo "Failed Login";
