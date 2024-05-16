@@ -24,9 +24,12 @@ $pssword = $_REQUEST['pssword'];
 $sql = "SELECT pssword FROM login_tbl WHERE userid = '$userid'";
 $result = $conn->query($sql);
 
-if ($result == $pssword) {
+if ($result -> num_rows > 0) {
   // Send to home
-  include 'home.html';
+  $bridge = $result->fetch_assoc();
+  $pass = $bridge['pssword'];
+  if($pass == $pssword)
+  {  include 'home.html';}
 }
 else if (is_null($result)) {
   echo "Failed Login";
