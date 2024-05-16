@@ -25,7 +25,6 @@ $sql = "SELECT pssword FROM login_tbl WHERE userid = '$userid'";
 $result = $conn->query($sql);
 
 if ($result == $pssword) {
-  echo "Succesful login";
   // Send to home
   include 'home.html';
 }
