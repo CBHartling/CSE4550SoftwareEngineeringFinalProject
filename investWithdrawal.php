@@ -24,7 +24,7 @@ $OGDate = new DateTime($result);
 $current = new DateTime();
 $interval = $current->diff($OGDate);
 
-if($interval->y. >=1){
+if($interval->y >=1){
 //when a deposit happens you need to do both the transactions table and the Investment table
 $sql = "UPDATE Investment SET Balance = Balance - '$WithAmt' WHERE Acct_no='$Acct_no'";
 $conn->query($sql);
