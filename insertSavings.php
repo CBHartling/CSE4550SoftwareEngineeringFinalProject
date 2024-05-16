@@ -37,7 +37,7 @@ if ($conn->connect_error) {
    $total_amount = floatval($_REQUEST['total_amount']);
 
 
-   $sql = "INSERT INTO savings (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID, interst_rate, total_amount)
+   $sql = "INSERT INTO savings (Acct_no, firstname, lastname, address, email, phone, Balance, Date, TRansID, interest_rate, total_amount)
 VALUES ('$Acct_no', '$firstname', '$lastname', '$address', '$email', '$phone', '$Balance', '$Date', '$TRansID', '$interst_rate', '$total_amount')";
 
 if ($conn->query($sql) === TRUE) {
