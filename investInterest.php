@@ -1,5 +1,5 @@
 
-<p>Investment Deposit</p>
+<p>Investment Interest</p>
 
 <?php
 
