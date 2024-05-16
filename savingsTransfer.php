@@ -15,23 +15,33 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
-//Values for account number and the requested deposit amount
+
 $Acct_noFrom = intval($_REQUEST['Acct_noFrom']);
 $Acct_noTar = intval($_REQUEST['Acct_noTar']);
 $TransAmt = floatval($_REQUEST['TransAmt']);
+$conn->begin_transaction();
 
+try {
+    // Subtract the transaction amount from the source account
+    $sql = "UPDATE savings SET Balance = Balance - $TransAmt WHERE Acct_no = $Acct_noFrom";
+    $conn->query($sql);
 
-//when a deposit happens you need to do both the transactions table and the savings table
-$sql = "UPDATE savings SET Balance = Balance - '$TransAmt' WHERE Acct_no='$Acct_noFrom'";
-$conn->query($sql);
-$sql = "UPDATE savings SET Balance = Balance + '$TransAmt' WHERE Acct_no='$Acct_noTar'";
-$conn->query($sql);
-$sql = "INSERT INTO savings_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
-SELECT s.TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, s.lastname, s.firstname, s.phone
-FROM savings s
-WHERE s.Acct_no = $Acct_noFrom";
+    // Add the transaction amount to the target account
+    $sql = "UPDATE savings SET Balance = Balance + $TransAmt WHERE Acct_no = $Acct_noTar";
+    $conn->query($sql);
+    $sql = "INSERT INTO savings_transactions (transid, trans_type, trans_date, trans_amount, lastname, firstname, phone)
+SELECT TRansID, 'Transfer', CURRENT_DATE(), $TransAmt, lastname, firstname, phone
+FROM savings 
+WHERE Acct_no = $Acct_noFrom";
+    // Commit the transaction
+    $conn->commit();
 
-
+    echo "Transaction successful.";
+} catch (Exception $e) {
+    // Rollback the transaction if an error occurred
+    $conn->rollback();
+    echo "Transaction failed: " . $e->getMessage();
+}
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
